@@ -1,0 +1,49 @@
+===== changeB_terms #1: LoRAとQLoRAの違いは？ =====
+[model] gemini-3.5-flash-lite
+LoRAとQLoRAの主な違いは、**ベースモデルの重みをそのまま使うか、量子化して軽量化するか**という点にあります。
+
+* **LoRA（Low-Rank Adaptation）**
+  * 事前学習済みの重みはそのまま（通常は16ビット精度など）固定し、重みの更新分を小さな「低ランク行列」で学習するPEFT（Parameter-Efficient Fine-Tuning）の手法です。学習するパラメータ量を大幅に削減できます。
+* **QLoRA（Quantized LoRA）**
+  * LoRAの仕組みに**量子化（Quantization）**を組み合わせた手法です。ベースモデルの重みを4ビットなどに極限まで圧縮（量子化）してメモリ消費を抑えた状態で固定し、その上からLoRAによる追加学習を行います。これにより、さらに大きなモデルを限られたGPUメモリで効率よく扱えるようになります。
+
+このように、QLoRAはLoRAの学習効率の良さを活かしつつ、ベースモデルのメモリ要件を劇的に下げる発展型の手法といえます。
+
+（関連する回：第2回）
+
+--- trace ---
+[tool call]   search_glossary({'query': 'LoRA QLoRA'})
+[tool return] search_glossary -> [{"term": "LoRA", "lecture": 2, "definition": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ…
+[usage] RunUsage(cost=Decimal('0.0009747'), details={'text_prompt_tokens': 1049}, input_text_tokens=1049, input_tokens=1049, output_tokens=264, requests=2, tool_calls=1)
+===== changeB_terms #2: LoRAとQLoRAの違いは？ =====
+[model] gemini-3.5-flash-lite
+LoRAとQLoRAの違いは以下の通りです。
+
+* **LoRA（Low-Rank Adaptation）**
+  * 事前学習済みの重みを固定したまま、追加の小さな低ランク行列（アダプタ）のみを学習することで、効率的に微調整を行うPEFT手法です。学習パラメータや保存ファイルを大幅に削減できます。
+
+* **QLoRA（Quantized LoRA）**
+  * LoRAの仕組みをベースに、ベースモデルの重みを4ビットなどに**量子化**してメモリ消費を極限まで節約した手法です。これにより、より大きなモデルを比較的小さなGPUメモリでも効率的に学習・扱えるようになります。
+
+関係する回：第2回
+
+--- trace ---
+[tool call]   search_glossary({'query': 'LoRA QLoRA'})
+[tool return] search_glossary -> [{"term": "LoRA", "lecture": 2, "definition": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ…
+[usage] RunUsage(cost=Decimal('0.0007497'), details={'text_prompt_tokens': 1049}, input_text_tokens=1049, input_tokens=1049, output_tokens=174, requests=2, tool_calls=1)
+===== changeB_terms #3: LoRAとQLoRAの違いは？ =====
+[model] gemini-3.5-flash-lite
+LoRAとQLoRAの違いは以下のとおりです。
+
+* **LoRA（Low-Rank Adaptation）**
+  事前学習済みのモデルの重みを固定したまま、ごく一部の追加の小さな行列（低ランク行列）だけを学習することで、効率的にモデルをファインチューニングする手法です。学習するパラメータを大幅に削減できます。
+
+* **QLoRA（Quantized LoRA）**
+  LoRAの手法をベースにしつつ、**ベースモデルの重みを4ビットなどの低ビットに量子化して読み込む**ことで、必要なVRAM（メモリ）をさらに劇的に節約する手法です。これにより、より巨大なモデルでも比較的小さなGPU環境で扱えるようになります。
+
+（関連する回：第2回）
+
+--- trace ---
+[tool call]   search_glossary({'query': 'LoRA QLoRA'})
+[tool return] search_glossary -> [{"term": "LoRA", "lecture": 2, "definition": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ…
+[usage] RunUsage(cost=Decimal('0.0007822'), details={'text_prompt_tokens': 1049}, input_text_tokens=1049, input_tokens=1049, output_tokens=187, requests=2, tool_calls=1)

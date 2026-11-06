@@ -1,0 +1,43 @@
+===== base_quiz #1: 第2回の内容から確認問題を1問出して =====
+[model] gemini-3.5-flash-lite
+それでは、第2回の内容から確認問題をお出しします！
+
+**【確認問題】**
+「学習率」の意味は何でしょうか？
+
+（答えは考えてみてくださいね！）
+
+関連する回：第2回
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"question": "「学習率」の意味は？", "answer": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。"}…
+[usage] RunUsage(cost=Decimal('0.0004143'), details={'text_prompt_tokens': 881}, input_text_tokens=881, input_tokens=881, output_tokens=60, requests=2, tool_calls=1)
+===== base_quiz #2: 第2回の内容から確認問題を1問出して =====
+[model] gemini-3.5-flash-lite
+それでは、第2回の内容から確認問題を1問出します！
+
+**【確認問題】**
+Q. 「事前学習」の意味は何でしょうか？
+
+（答えを知りたいときや、ヒントが欲しいときはいつでも声をかけてくださいね！）
+
+関連回：第2回
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"question": "「事前学習」の意味は？", "answer": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。"}…
+[usage] RunUsage(cost=Decimal('0.0004449'), details={'text_prompt_tokens': 883}, input_text_tokens=883, input_tokens=883, output_tokens=72, requests=2, tool_calls=1)
+===== base_quiz #3: 第2回の内容から確認問題を1問出して =====
+[model] gemini-3.5-flash-lite
+第2回の内容から確認問題です！
+
+**【確認問題】**
+Q. 「QLoRA」とはどのような手法でしょうか？
+
+（第2回）
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"question": "「QLoRA」の意味は？", "answer": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデル…
+[usage] RunUsage(cost=Decimal('0.0003994'), details={'text_prompt_tokens': 923}, input_text_tokens=923, input_tokens=923, output_tokens=49, requests=2, tool_calls=1)
